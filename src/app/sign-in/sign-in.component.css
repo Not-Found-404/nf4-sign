@@ -1,0 +1,29 @@
+/* “登录” 二字 */
+.nf4-sign__sign-in-text{
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  color: #404040;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+/* 登录表单上层div */
+.nf4-sign__sign-in-form{
+  display: flex;
+  justify-content: center;
+}
+/* 登录表单 */
+.sign-in-form {
+  max-width: 300px;
+}
+/* 忘记密码 */
+.sign-in-forgot {
+  float: right;
+}
+/* 登录按钮 */
+.sign-in-button {
+  width: 100%;
+}
