@@ -22,7 +22,7 @@
             <nz-input-group nzPrefixIcon="anticon anticon-user">
               <!-- 最多11位 -->
               <!-- 起别名"phoneNum" -->
-              <input id="phoneNum" #phoneNum nz-input formControlName="phoneNum" placeholder="手机号码" maxlength="11" >
+              <input id="phoneNum" [ngModel]="'10086'" #phoneNum nz-input formControlName="phoneNum" placeholder="手机号码" maxlength="11" >
             </nz-input-group>
             <!-- 验证是否是否碰过这个输入域&&是否输入了手机号&&若没有则提示错误信息 -->
             <nz-form-explain *ngIf="validateForm.get('phoneNum').dirty && validateForm.get('phoneNum').errors">请输入手机号码</nz-form-explain>
@@ -35,7 +35,7 @@
             <!-- 带有前缀图标 "锁"-->
             <nz-input-group nzPrefixIcon="anticon anticon-lock">
               <!-- 起别名"password" -->
-              <input type="password" #password nz-input formControlName="password" placeholder="密码">
+              <input type="password" [ngModel]="'1008611'" #password nz-input formControlName="password" placeholder="密码">
             </nz-input-group>
             <!-- 验证是否输入了密码 && 若没有则提示错误信息 -->
             <nz-form-explain *ngIf="validateForm.get('password').dirty && validateForm.get('password').errors">请输入密码</nz-form-explain>
