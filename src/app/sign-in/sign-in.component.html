@@ -37,7 +37,7 @@
             <nz-input-group nzPrefixIcon="anticon anticon-lock">
               <!-- 起别名"password" -->
               <!-- 默认密码 [ngModel]="'1008611'" -->
-              <input type="password"  #password nz-input formControlName="password" placeholder="密码">
+              <input type="password" #password nz-input formControlName="password" placeholder="密码">
             </nz-input-group>
             <!-- 验证是否输入了密码 && 若没有则提示错误信息 -->
             <nz-form-explain *ngIf="validateForm.get('password').dirty && validateForm.get('password').errors">请输入密码</nz-form-explain>

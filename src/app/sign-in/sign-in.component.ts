@@ -56,7 +56,6 @@ export class SignInComponent implements OnInit {
     });
   }
 
-
   ngOnInit(): void {
     this.validateForm = this.fb.group({
       phoneNum: [null, [Validators.required]], // 非空输入
@@ -64,5 +63,4 @@ export class SignInComponent implements OnInit {
       remember: [true]// 是否记住
     });
   }
-
 }
