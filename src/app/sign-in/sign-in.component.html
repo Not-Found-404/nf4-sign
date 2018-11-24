@@ -53,7 +53,7 @@
             <!-- 忘记密码 -->
             <!--<a class="sign-in-forgot" >忘记密码</a>-->
             <!-- 登录 -->
-            <button nz-button (click)="signIn(phoneNum.value,password.value)" class="sign-in-button" [nzType]="'primary'">登录</button>
+            <button nz-button nzLoading={{isonLoading}} (click)="signIn(phoneNum.value,password.value)" class="sign-in-button" [nzType]="'primary'">登录</button>
               还没有账户？
             <!-- 注册 -->
             <a href="toRegisterPage">创建一个!</a>

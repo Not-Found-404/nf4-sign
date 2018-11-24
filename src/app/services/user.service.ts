@@ -81,6 +81,5 @@ export class UserService {
    */
   constructor(private http: HttpClient) {
     this.userUrl = 'user/';
-    // this.userUrl = 'http://localhost:80/user/';
   }
 }

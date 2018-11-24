@@ -19,6 +19,7 @@ import {User} from '../services/user';
 export class SignInComponent implements OnInit {
   validateForm: FormGroup;
   user: User;
+  isonLoading = false;
 
   createMessage(type: string): void {
     if (type === 'success') {
@@ -35,18 +36,20 @@ export class SignInComponent implements OnInit {
       this.validateForm.controls[i].markAsDirty();
       this.validateForm.controls[i].updateValueAndValidity();
     }
-    console.log();
-
   }
 
   constructor(private fb: FormBuilder, private userService: UserService, private message: NzMessageService) {
   }
+
   // 执行登录操作，判断是否成功
   signIn(phoneNum: String, password: String): void {
+    console.log('signIn isonLoading: ' + this.isonLoading);
+    this.isonLoading = true;
     this.userService.login({
       phoneNum: phoneNum,
       password: password
     }).subscribe((data: Result) => {
+      this.isonLoading = false;
       if (data.code === 500) {
         this.createMessage('error');
       } else if (data.code === 200) {
@@ -57,6 +60,8 @@ export class SignInComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log('ngOnInit isonLoading: ' + this.isonLoading);
+    this.isonLoading = false;
     this.validateForm = this.fb.group({
       phoneNum: [null, [Validators.required]], // 非空输入
       password: [null, [Validators.required]], // 非空输入
