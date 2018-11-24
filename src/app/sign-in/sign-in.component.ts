@@ -20,6 +20,7 @@ export class SignInComponent implements OnInit {
   validateForm: FormGroup;
   user: User;
   isonLoading = false;
+  private prefix = '';
 
   createMessage(type: string): void {
     if (type === 'success') {
@@ -54,7 +55,7 @@ export class SignInComponent implements OnInit {
         this.createMessage('error');
       } else if (data.code === 200) {
         this.createMessage('success');
-        window.open('toUserPage', '_self');
+        window.open(this.prefix + 'usercenter.html', '_self');
       }
     });
   }
@@ -67,5 +68,9 @@ export class SignInComponent implements OnInit {
       password: [null, [Validators.required]], // 非空输入
       remember: [true]// 是否记住
     });
+  }
+
+  toRegisterPage() {
+    window.open(this.prefix + 'register.html', '_self');
   }
 }

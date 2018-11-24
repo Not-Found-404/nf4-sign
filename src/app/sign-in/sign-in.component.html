@@ -56,7 +56,7 @@
             <button nz-button nzLoading={{isonLoading}} (click)="signIn(phoneNum.value,password.value)" class="sign-in-button" [nzType]="'primary'">登录</button>
               还没有账户？
             <!-- 注册 -->
-            <a href="toRegisterPage">创建一个!</a>
+            <a  (click)="toRegisterPage()">创建一个!</a>
           </nz-form-control>
         </nz-form-item>
       </form>
