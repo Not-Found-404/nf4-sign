@@ -3,3 +3,21 @@
       <app-sign-in-layout></app-sign-in-layout>
     </div>
 </div>
+
+<!-- 通知消息消息显示模板 -->
+<ng-template [ngTemplateOutlet]="template" #notificationTemplate let-notification>
+  <div class="ant-notification-notice-content">
+    <div>
+      <div class="ant-notification-notice-message">NF4 园丁助手</div>
+      <div class="ant-notification-notice-description">
+        欢迎使用 NF4 园丁助手，您可以观看 NF4 园丁助手 介绍视频了解更多内容。
+      </div>
+      <span class="ant-notification-notice-btn">
+        <button class="btn-watchVideo" nz-button nzType="primary" nzSize="small" (click)="jumpToVideo()"><span>观看视频</span></button>
+        <button nz-button nzType="primary" nzSize="small" (click)="notification.close()"><span>关闭</span></button>
+      </span>
+    </div>
+  </div>
+</ng-template>
+<!-- 触发通知按钮，从 DOM 流中移除样式 -->
+<button class="btn-triggerVideo" id="videoTriggerBtn" nz-button [nzType]="'primary'" (click)="createBasicNotification(notificationTemplate)"></button>
